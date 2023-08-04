@@ -19,7 +19,7 @@ spec:
   selector:
     matchLabels:
       app: avalanche
-  replicas: 1 # tells deployment to run 1 pods matching the template
+  replicas: 10 # tells deployment to run 1 pods matching the template
   template:
     metadata:
       labels:
@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: pg-avalanche
-        image: quay.io/aabhishe/avalanche:latest
+        image: quay.io/prometheuscommunity/avalanche:main
         args:
         - "--metric-count=50000"
         - "--label-count=10"
